@@ -8,22 +8,6 @@ sap.ui.define([
 
     return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
 
-        onInit: function () {
-            var oData = {
-                recipient: {
-                    name: "World"
-                }
-            };
-            var oModel = new JSONModel(oData);
-            this.getView().setModel(oModel);
-
-            // 在视图中设置 i18n 模型
-            var i18nModel = new ResourceModel({
-                bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
-            });
-            this.getView().setModel(i18nModel, "i18n")
-        },
-
         onShowHello: function () {
             // 读取 i18n 模型中的消息
             var oBundle = this.getView().getModel("i18n").getResourceBundle();
