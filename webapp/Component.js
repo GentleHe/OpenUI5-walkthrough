@@ -7,13 +7,8 @@ sap.ui.define([
 
     return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
         metadata: {
-            "interface": ["sap.ui.core.IAsyncContentCreation"],
-            "rootView": {
-                "viewName": "sap.ui.demo.walkthrough.view.App",
-                "type": "XML",
-                /*"async": true, // 通过 sap.ui.core.IAsyncContentCreation 接口直接设置*/
-                "id": "app"
-            }
+            interface: ["sap.ui.core.IAsyncContentCreation"],
+            manifest: "json"
         },
 
         init: function () {
@@ -28,12 +23,6 @@ sap.ui.define([
             };
             var oModel = new JSONModel(oData);
             this.setModel(oModel);
-
-            // 设置 i18n 模型
-            var i18nModel = new ResourceModel({
-                bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
-            });
-            this.setModel(i18nModel, "i18n");
         }
     })
 });
