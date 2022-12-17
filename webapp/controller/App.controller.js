@@ -3,19 +3,8 @@ sap.ui.define([
     "sap/m/MessageToast",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/resource/ResourceModel"
-], function (Controller, MessageToast, JSONModel, ResourceModel) {
+], function (Controller) {
     "use strict"
 
-    return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
-
-        onShowHello: function () {
-            // 读取 i18n 模型中的消息
-            var oBundle = this.getView().getModel("i18n").getResourceBundle();
-            var sRecipient = this.getView().getModel().getProperty(("/recipient/name"))
-            var sMsg = oBundle.getText("helloMsg", [sRecipient])
-
-            // 展示消息
-            MessageToast.show(sMsg);
-        }
-    });
+    return Controller.extend("sap.ui.demo.walkthrough.controller.App", {});
 })
